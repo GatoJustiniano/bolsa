@@ -17,7 +17,7 @@ class CreatePostulantsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('last name');
+            $table->string('last_name');
             $table->string('email')->unique();
             $table->integer('country'); 
             $table->integer('city');
@@ -26,12 +26,8 @@ class CreatePostulantsTable extends Migration
             $table->string('telephone');
             $table->string('identity_card');
             $table->date('birthday');
-            $table->integer('gender');
+            $table->integer('gender');    
             
-            
-            
-            
-
         });
     }
 
