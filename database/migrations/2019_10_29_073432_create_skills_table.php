@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCitiesTable extends Migration
+class CreateSkillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
-            $table->enum('name', ['Santa Cruz de la Sierra', 'La Paz', 'Cochabamba', 'El Alto', 'Tarija'
-            , 'Sucre', 'Trinidad', 'Potosí', 'Oruro', 'Cobija', 'Otra ciudad de Bolivia', 'Otra ciudad del extranjero']);
+
+            $table->string('ability'); //Deberá srr una lista como: sé cocinar, sé limpiar casas, sé limpiar autos, etc.            
 
             $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('skills');
     }
 }

@@ -15,18 +15,20 @@ class CreatePostulantsTable extends Migration
     {
         Schema::create('postulants', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            
             $table->string('name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->integer('country'); 
-            $table->integer('city');
+            $table->integer('country'); //llave foranea
+            $table->integer('city');    //llave foranea
 
-            $table->string('direction');
-            $table->string('telephone');
-            $table->string('identity_card');
-            $table->date('birthday');
-            $table->integer('gender');    
+            $table->string('direction')->nullable(); //Pueden ser nulos, solo la primera sesión
+            $table->string('telephone')->nullable();
+            $table->string('identity_card')->nullable();
+            $table->date('birthday')->nullable();
+            $table->integer('gender')->nullable();  
+            
+            $table->timestamps();
             
         });
     }
